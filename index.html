@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daxone Fashion</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header bg-dark text-white py-2">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark px-0">
+                <!-- Logo -->
+                <a class="navbar-brand d-flex align-items-center text-decoration-none" href="#">
+                    <!-- ============================================================== -->
+                    <!-- IMPORTANT: Replace this SVG with your actual Daxone logo      -->
+                    <!-- For example: <img src="your-daxone-logo.svg" alt="Daxone Logo" class="daxone-logo-img"> -->
+                    <!-- This is a placeholder SVG: -->
+                    <svg class="me-2" width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff6b6b;}</style></defs>
+                        <g transform="rotate(-10 50 50) scale(1.1)">
+                            <path class="cls-1" d="M20,80 Q18,80 18,78 L18,42 Q18,40 20,40 L75,40 Q77,40 77,42 L77,78 Q77,80 75,80 Z"/>
+                            <path class="cls-1" d="M22,45 L30,25 L65,25 L73,45" fill="none" stroke="#fff" stroke-width="5"/>
+                            <circle class="cls-1" cx="30" cy="85" r="7"/>
+                            <circle class="cls-1" cx="65" cy="85" r="7"/>
+                            <line class="cls-2" x1="40" y1="35" x2="65" y2="10" stroke-width="10" stroke-linecap="round"/>
+                            <polyline class="cls-2" points="55,15 65,10 60,0" stroke-width="3" stroke-linejoin="round"/>
+                        </g>
+                    </svg>
+                    <!-- ============================================================== -->
+                    <span class="text-white" style="font-size: 1.7rem; font-weight: 700; letter-spacing: -0.5px;">Daxone</span>
+                </a>
+
+                <!-- Mobile Navbar Toggler -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link px-3 active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="about us .html">About us</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="shop.html">Shops</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="products.html">Products</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
+                    </ul>
+                    <!-- Header Icons -->
+                    <div class="d-flex align-items-center navbar-icons">
+                        <a href="#" class="text-white me-3 nav-icon-link"><i class="bi bi-search fs-5"></i></a>
+                        <a href="#" class="text-white text-decoration-none d-flex align-items-center nav-icon-link">
+                            <i class="bi bi-cart fs-5 me-1"></i>
+                            <span class="cart-items-text">2 items</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Text Content -->
+                <div class="col-lg-6 col-md-12 hero-content-column order-lg-1 order-2 mt-5 mt-lg-0" data-aos="fade-right" data-aos-delay="200">
+                    <div class="hero-text-wrapper">
+                        <div class="vertical-accent-bar"></div>
+                        <h1 class="hero-title fw-bold mb-3">Complete Summer<br>Fashion</h1>
+                        <p class="text-muted mb-4 hero-subtitle">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                            do eiusmod tempor incididunt labore dolore magna aliqua.
+                        </p>
+                        <p class="hero-price h2 fw-bold mb-4">$600.00</p>
+                        <a href="#" class="btn btn-outline-dark btn-buy-now py-2 px-4 me-sm-3 mb-3 mb-sm-0">Buy Now</a>
+                        <a href="#" class="play-details-link text-decoration-none align-items-center d-inline-flex">
+                            <i class="bi bi-play-circle-fill me-2 play-icon"></i>
+                            <span class="align-middle">Play Details</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Image Content -->
+                <div class="col-lg-6 col-md-12 hero-image-column order-lg-2 order-1 text-center" data-aos="fade-left" data-aos-delay="400">
+                    <!-- ============================================================== -->
+                    <!-- IMPORTANT: Replace this image URL with your actual model image -->
+                    <img src="comfort.webp" class="img-fluid hero-model-img" alt="Summer Fashion Model">
+                    <!-- Example: <img src="path/to/your-model-image.png" class="img-fluid hero-model-img" alt="Summer Fashion Model"> -->
+                    <!-- Placeholder image URL: https://via.placeholder.com/500x700/CCCCCC/808080?text=Model+Image -->
+                    <!-- Image from original if available separately, current one used is a cropped version of your example: -->
+                    <!-- The URL used https://i.imgur.com/P23oV2L.png is a manually cropped version of the model from your screenshot -->
+                    <!-- ============================================================== -->
+                </div>
+            </div>
+            <!-- Slider Navigation Arrows -->
+            <div class="slider-navigation text-start mt-5 pt-3 d-none d-lg-block" data-aos="fade-up" data-aos-delay="600">
+                <button class="btn btn-light border me-2 prev-btn" aria-label="Previous slide"><i class="bi bi-chevron-left"></i></button>
+                <button class="btn btn-light border next-btn" aria-label="Next slide"><i class="bi bi-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+    <!-- section2 -->
+       <div class="container my-5"> 
+        <section class="decorator-section">
+            <div class="row g-0"> <!-- g-0 removes gutters between columns -->
+                
+                <!-- Left Column: Image -->
+                <div class="col-lg-6 decorator-image-col" data-aos="fade-right" data-aos-duration="1000">
+                    <!-- **IMPORTANT**: Apni actual image ka path yahan daalein -->
+                    <img src="2.PNG" alt="Living room setup with sofa and frame">
+                </div>
+
+                <!-- Right Column: Text and Lights -->
+                <div class="col-lg-6 decorator-content-col">
+                    <div class="text-and-link-wrapper" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                        <h1>Premium Home</h1>
+                        <h2>Decorator</h2>
+                        <a href="#" class="learn-more-link">LEARN MORE</a>
+                    </div>
+                    <!-- **IMPORTANT**: Apni actual lights image ka path yahan daalein -->
+                    <!-- <img src="https://i.imgur.com/5Q08nFj.png" alt="Decorative lights" class="lights-image-main" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1200"> -->
+                </div>
+
+            </div>
+        </section>
+    </div>
+<!-- section3 -->
+  <section class="best-sell-section py-5">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-4">
+                <div class="col-md-8">
+                    <h2 class="section-title mb-3" data-aos="fade-up">Best Sell</h2>
+                    <p class="section-description text-muted" data-aos="fade-up" data-aos-delay="100">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Product Card 1 -->
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <!-- **IMPORTANT**: Apni actual image ka path yahan daalein -->
+                            <img src="pro-hm1-1.webp" alt="Golden Easy Spot Chair">
+                            <!-- No badge for the first item in example -->
+                        </div>
+                        <div class="product-details">
+                            <p class="product-category">Chair</p>
+                            <h3 class="product-name">Golden Easy Spot Chair.</h3>
+                            <div class="product-price">
+                                <span class="current-price">$210.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <!-- **IMPORTANT**: Apni actual image ka path yahan daalein -->
+                            <img src="keel.webp" alt="Golden Easy Spot Chair">
+                            <span class="product-badge badge-sale">-30%</span>
+                        </div>
+                        <div class="product-details">
+                            <p class="product-category">Chair</p>
+                            <h3 class="product-name">Golden Easy Spot Chair.</h3>
+                            <div class="product-price">
+                                <span class="current-price">$210.00</span>
+                                <span class="old-price">$230.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <!-- **IMPORTANT**: Apni actual image ka path yahan daalein -->
+                            <img src="table.webp" alt="Golden Easy Spot Chair">
+                            <span class="product-badge badge-stockout">Stock Out</span>
+                        </div>
+                        <div class="product-details">
+                            <p class="product-category">Chair</p>
+                            <h3 class="product-name">Golden Easy Spot Chair.</h3>
+                            <div class="product-price">
+                                <span class="current-price">$250.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <!-- **IMPORTANT**: Apni actual image ka path yahan daalein -->
+                            <img src="design.webp" alt="Golden Easy Spot Chair">
+                            <span class="product-badge badge-new">NEW</span>
+                        </div>
+                        <div class="product-details">
+                            <p class="product-category">Chair</p>
+                            <h3 class="product-name">Golden Easy Spot Chair.</h3>
+                            <div class="product-price">
+                                <span class="current-price">$320.00</span>
+                                <span class="old-price">$120.00</span> <!-- Example mein old price kam hai, dhyan dein -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section4 -->
+       <section class="winter-discount-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Image Column -->
+                <div class="col-lg-7 col-md-6 mb-4 mb-md-0" data-aos="fade-right" data-aos-duration="800">
+                    <div class="image-showcase">
+                        <!-- **IMPORTANT**: Apni actual image ka path yahan daalein -->
+                        <img src="sofaaaaa.avif" alt="Winter Discount Furniture" class="img-fluid discount-image">
+                    </div>
+                </div>
+
+                <!-- Text Content Column -->
+                <div class="col-lg-5 col-md-6" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <div class="discount-text-content">
+                        <p class="intro-text" data-aos="fade-up" data-aos-delay="300">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                        <h2 class="main-title" data-aos="fade-up" data-aos-delay="400">Winter Discount</h2>
+                        <h3 class="sub-title" data-aos="fade-up" data-aos-delay="500">Up to 30%</h3>
+                        <p class="description-text" data-aos="fade-up" data-aos-delay="600">
+                            It is a long established fact that a reader will be distracted
+                            by the readable content of a page when looking at its layout.
+                        </p>
+                        <a href="products.html" class="btn btn-shop-now mt-3" data-aos="fade-up" data-aos-delay="700">SHOP NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section5 -->
+      
+    
+    <section class="product-grid-section py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Product Card 1 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <!-- **IMPORTANT**: Apni actual image ka path yahan daalein -->
+                            <img src="pro-hm1-1.webp" alt="Golden Easy Spot Chair">
+                            <!-- No badge -->
+                        </div>
+                        <div class="product-details">
+                            <p class="product-category">Chair</p>
+                            <h3 class="product-name">Golden Easy Spot Chair.</h3>
+                            <div class="product-price">
+                                <span class="current-price">$210.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="keel.webp" alt="Golden Easy Spot Chair">
+                            <span class="product-badge badge-sale">-30%</span>
+                        </div>
+                        <div class="product-details">
+                            <p class="product-category">Chair</p>
+                            <h3 class="product-name">Golden Easy Spot Chair.</h3>
+                            <div class="product-price">
+                                <span class="current-price">$250.00</span>
+                                <span class="old-price">$270.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="table.webp" alt="Golden Easy Spot Chair">
+                            <!-- No badge -->
+                        </div>
+                        <div class="product-details">
+                            <p class="product-category">Chair</p>
+                            <h3 class="product-name">Golden Easy Spot Chair.</h3>
+                            <div class="product-price">
+                                <span class="current-price">$200.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="250">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="design.webp" alt="Golden Easy Spot Chair">
+                            <span class="product-badge badge-new">NEW</span>
+                        </div>
+                        <div class="product-details">
+                            <p class="product-category">Chair</p>
+                            <h3 class="product-name">Golden Easy Spot Chair.</h3>
+                            <div class="product-price">
+                                <span class="current-price">$220.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="black chair.webp" alt="Golden Easy Spot Chair">
+                            <span class="product-badge badge-stockout">Stock Out</span>
+                        </div>
+                        <div class="product-details">
+                            <p class="product-category">Chair</p>
+                            <h3 class="product-name">Golden Easy Spot Chair.</h3>
+                            <div class="product-price">
+                                <span class="current-price">$250.00</span>
+                                <span class="old-price">$260.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="350">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="cubic chair.webp" alt="Golden Easy Spot Chair">
+                            <!-- No badge -->
+                        </div>
+                        <div class="product-details">
+                            <p class="product-category">Chair</p>
+                            <h3 class="product-name">Golden Easy Spot Chair.</h3>
+                            <div class="product-price">
+                                <span class="current-price">$260.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 7 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="sofa chair.webp" alt="Golden Easy Spot Chair">
+                            <span class="product-badge badge-new">NEW</span>
+                        </div>
+                        <div class="product-details">
+                            <p class="product-category">Chair</p>
+                            <h3 class="product-name">Golden Easy Spot Chair.</h3>
+                            <div class="product-price">
+                                <span class="current-price">$240.00</span>
+                                <span class="old-price">$290.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 8 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="450">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="net chair.webp" alt="Golden Easy Spot Chair">
+                            <!-- No badge -->
+                        </div>
+                        <div class="product-details">
+                            <p class="product-category">Chair</p>
+                            <h3 class="product-name">Golden Easy Spot Chair.</h3>
+                            <div class="product-price">
+                                <span class="current-price">$280.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </section> <!-- /.product-grid-section -->
+    <!-- footer section -->
+
+    
+    <footer class="site-footer pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: Logo and Social -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 footer-widget">
+                    <div class="footer-logo mb-3">
+                        <a href="#" class="d-inline-flex align-items-center text-decoration-none">
+                            <!-- **IMPORTANT**: Apni actual SVG/Image logo yahan daalein. Yeh placeholder hai. -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-cart3 me-1 logo-cart-icon" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.795 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                            <span class="logo-text-dax">Dax</span><span class="logo-text-one">one</span>
+                        </a>
+                    </div>
+                    <p class="follow-us-text mb-2">Follow us:</p>
+                    <ul class="social-icons list-inline mb-0">
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Useful Link -->
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 footer-widget">
+                    <h5 class="widget-title">USEFUL LINK</h5>
+                    <ul class="footer-links list-unstyled mb-0">
+                        <li><a href="#">Shopping Cat</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Checkout</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: About Us -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 footer-widget"> <!-- Adjusted width slightly for longer text -->
+                    <h5 class="widget-title">ABOUT US</h5>
+                    <ul class="footer-links list-unstyled mb-0">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Terms and conditions</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter -->
+                <div class="col-lg-4 col-md-6 footer-widget">
+                    <h5 class="widget-title">NEWSLETTER</h5>
+                    <p class="newsletter-description mb-2">Subscribe to get all new updates</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <button class="btn btn-submit-newsletter" type="submit" aria-label="Subscribe">
+                                <i class="fas fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800, // Animation duration
+            once: true,    // Whether animation should happen only once - while scrolling down
+        });
+    </script>
+</body>
+</html>

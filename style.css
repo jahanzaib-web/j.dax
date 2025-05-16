@@ -1,0 +1,886 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll from AOS */
+    background-color: #FAF6F5; /* Base background for the page */
+}
+
+/* --- Header Customizations --- */
+.site-header {
+    border-bottom: 1px solid #333; /* Subtle separator if needed, original has none */
+}
+
+.navbar-brand .daxone-logo-img { /* Style if you use an <img> tag for logo */
+    height: 30px;
+    /* filter: brightness(0) invert(1); apply if your logo is dark and needs to be white */
+}
+
+.navbar-nav .nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: #FF6B6B !important; /* Accent color */
+}
+.navbar-icons .nav-icon-link:hover {
+    color: #FF6B6B !important;
+}
+.navbar-icons .cart-items-text {
+    color: #FF6B6B; /* Accent color for "2 items" */
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* --- Hero Section Customizations --- */
+.hero-section {
+    background-color: #FAF6F5; /* Light beige background from image */
+    /* Faint circular/oval shapes in background */
+    background-image:
+        radial-gradient(ellipse 50% 60% at 78% 45%, rgba(220, 210, 208, 0.25) 0%, rgba(220, 210, 208, 0) 70%),
+        radial-gradient(ellipse 40% 50% at 20% 55%, rgba(220, 210, 208, 0.2) 0%, rgba(220, 210, 208, 0) 70%);
+    background-repeat: no-repeat;
+    padding: 6rem 0;
+    min-height: calc(100vh - 70px); /* Adjust 70px based on actual header height */
+    display: flex;
+    align-items: center;
+    position: relative; /* For absolute positioned elements if any */
+}
+
+.hero-text-wrapper {
+    position: relative;
+    padding-left: 35px; /* Space for the vertical bar + breathing room */
+}
+
+.vertical-accent-bar {
+    position: absolute;
+    left: 0;
+    top: 5px;    /* Small gap from very top */
+    bottom: 5px; /* Small gap from very bottom */
+    width: 8px;
+    background-color: #FCDAD7; /* Soft pinkish color */
+    border-radius: 4px;
+    z-index: 0;
+}
+
+.hero-title {
+    font-size: clamp(2.8rem, 5vw, 4.2rem); /* Responsive font size */
+    line-height: 1.25;
+    color: #202020; /* Dark text color */
+}
+
+.hero-subtitle {
+    font-size: 0.95rem;
+    max-width: 480px;
+}
+
+.hero-price {
+    color: #202020;
+    font-weight: 700; /* Bold price */
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.btn-buy-now {
+    border-radius: 25px;
+    border-color: #333;
+    color: #333;
+    font-weight: 600;
+    padding: 0.6rem 1.8rem;
+    transition: all 0.3s ease;
+}
+.btn-buy-now:hover {
+    background-color: #333;
+    color: white;
+}
+
+.play-details-link {
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.play-details-link .play-icon {
+    font-size: 1.8rem;
+    color: #FF6B6B; /* Accent color for play icon */
+    transition: color 0.3s ease;
+}
+.play-details-link:hover,
+.play-details-link:hover .play-icon {
+    color: #E55050; /* Darker accent on hover */
+}
+.play-details-link:hover span {
+    color: #E55050;
+}
+
+.hero-model-img {
+    max-height: 80vh; /* Constrain image height */
+    width: auto;
+    max-width: 100%;
+}
+
+.slider-navigation button {
+    border-radius: 50% !important;
+    width: 45px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+.slider-navigation button:hover {
+    background-color: #f8f9fa;
+    border-color: #DDD;
+    transform: translateY(-2px);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991.98px) { /* Tablets and below */
+    .hero-section {
+        padding: 4rem 0;
+        min-height: auto;
+        text-align: center;
+    }
+    .hero-text-wrapper {
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center items when text-align:center */
+    }
+    .vertical-accent-bar {
+        /* Transform to horizontal bar above text */
+        left: 50%;
+        transform: translateX(-50%);
+        top: -25px; /* Position above text */
+        height: 6px;
+        width: 100px;
+        bottom: auto;
+    }
+    .hero-content-column {
+        padding-top: 30px; /* Space for the horizontal bar */
+    }
+    .hero-image-column {
+        margin-bottom: 3rem;
+    }
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .slider-navigation { /* Show on tablet if desired, or keep d-none d-lg-block */
+        text-align: center !important;
+        /* display: block !important; */
+    }
+}
+
+@media (max-width: 767.98px) { /* Mobile phones */
+    .hero-section {
+        padding: 3rem 0;
+    }
+    .hero-title {
+        font-size: 2.2rem; /* Smaller title on mobile */
+    }
+    .hero-price {
+        font-size: 1.8rem; /* Smaller price on mobile */
+    }
+    .btn-buy-now {
+        margin-right: 0 !important; /* Stack buttons */
+        margin-bottom: 1rem;
+    }
+    .navbar-nav { /* Full width nav items in collapsed menu */
+        padding-top: 1rem;
+    }
+}
+/* section2 */
+body {
+    font-family: 'Arial', sans-serif; /* Aap apni pasand ka font use kar sakte hain */
+    background-color: #f8f9fa; /* Page ka halka background color */
+}
+
+.decorator-section {
+    background-color: #ffffff; /* Section ka white background */
+    overflow: hidden; /* Rounded corners aur animations ke liye zaroori */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Thoda halka shadow */
+    border-radius: 12px; /* Section ke rounded corners */
+    /* margin-top aur margin-bottom container par my-5 se aa rahe hain */
+}
+
+.decorator-image-col {
+    padding: 0; /* Column ke andar koi padding nahi, image poori jagah legi */
+}
+
+.decorator-image-col img {
+    width: 100%;
+    height: 100%; /* Column ki poori height le */
+    object-fit: cover; /* Image ko crop karke fit karega, aspect ratio maintain rahega */
+    display: block; /* Image ke neeche extra space hatane ke liye */
+    border-radius: 12px 0 0 12px; /* Sirf left corners rounded (bade screens par) */
+}
+
+.decorator-content-col {
+    display: flex;
+    flex-direction: row; /* Bade screens par text aur lights side-by-side */
+    align-items: center; /* Vertical alignment center mein */
+    justify-content: center; /* Horizontal content ko center karne ki koshish */
+    padding: 30px 40px; /* Content column ke andar padding */
+    gap: 25px; /* Text block aur lights image ke beech space */
+    border-radius: 0 12px 12px 0; /* Sirf right corners rounded (bade screens par) */
+    min-height: 350px; /* Content ke liye minimum height */
+}
+
+.text-and-link-wrapper {
+    text-align: left; /* Text left-aligned rahega */
+    flex-grow: 1; /* Text block ko zyada jagah de agar zaroorat ho */
+    flex-shrink: 1;
+}
+
+.decorator-content-col h1 { /* "Premium Home" */
+    font-size: 2.4rem;
+    font-weight: 300; /* Light weight */
+    color: #6c5b51; /* Muted brown */
+    margin-bottom: 0; /* Iske neeche koi margin nahi */
+    line-height: 1.2;
+}
+
+.decorator-content-col h2 { /* "Decorator" */
+    font-size: 3.6rem;
+    font-weight: 600; /* Bold weight */
+    color: #54453d; /* Darker brown */
+    margin-bottom: 0.8em; /* LEARN MORE link se pehle thoda space */
+    line-height: 1.1;
+}
+
+.learn-more-link {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #7c6c60; /* Brown color */
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid #7c6c60;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    display: inline-block; /* Taki margin sahi se lage */
+    letter-spacing: 0.5px; /* Thodi si letter spacing */
+    text-transform: uppercase; /* Uppercase letters */
+}
+
+.learn-more-link:hover {
+    color: #54453d;
+    border-color: #54453d;
+}
+
+.lights-image-main {
+    width: 100px; /* Lights image ki default width */
+    max-width: 120px; /* Maximum width */
+    height: auto; /* Aspect ratio maintain karega */
+    flex-shrink: 0; /* Image ko shrink hone se roke */
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) { /* Medium devices (tablets, <992px) - Bootstrap LG breakpoint */
+    .decorator-content-col {
+        flex-direction: column; /* Text aur lights ek ke neeche ek */
+        text-align: center; /* Text ko center karein */
+        padding: 35px 30px;
+        border-radius: 0 0 12px 12px; /* Neeche ke corners rounded */
+        min-height: auto; /* Min height auto karein */
+    }
+    .text-and-link-wrapper {
+        text-align: center; /* Text wrapper ke andar bhi text center */
+        margin-bottom: 25px; /* Lights se pehle space */
+        width: 100%;
+    }
+    .lights-image-main {
+        margin-top: 0; /* Kyunki margin-bottom text wrapper par hai */
+        width: 100px;
+    }
+    .decorator-image-col img {
+        border-radius: 12px 12px 0 0; /* Upar ke corners rounded */
+        min-height: 280px; /* Chhote screens par image ki minimum height */
+    }
+}
+
+@media (max-width: 767.98px) { /* Small devices (phones, <768px) - Bootstrap MD breakpoint */
+    .decorator-content-col {
+        padding: 30px 20px;
+    }
+    .decorator-content-col h1 {
+        font-size: 1.8rem;
+    }
+    .decorator-content-col h2 {
+        font-size: 2.6rem;
+    }
+    .learn-more-link {
+        font-size: 0.8rem;
+    }
+    .lights-image-main {
+        width: 85px;
+    }
+    .decorator-image-col img {
+        min-height: 220px;
+    }
+}
+/* section3 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff; /* Example mein page ka background white lag raha hai */
+}
+
+.best-sell-section {
+    background-color: #fff; /* Section ka background bhi white */
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #222; /* Thoda dark title color */
+    text-transform: capitalize; /* "Best Sell" mein B aur S capital hain */
+}
+
+.section-description {
+    font-size: 0.95rem;
+    color: #555; /* Description ka halka color */
+    line-height: 1.6;
+}
+
+.product-card {
+    background-color: #fff; /* Card ka background white */
+    border: 1px solid #eee; /* Halka sa border, ya aap ise hata bhi sakte hain */
+    border-radius: 6px;
+    overflow: hidden; /* Badges aur image fit ke liye */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Taaki sab cards ek height ke lage agar content alag ho */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.product-image-container {
+    background-color: #f7f8fa; /* Image ke peeche ka light grey background */
+    padding: 25px;
+    position: relative; /* Badge positioning ke liye */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px; /* Image container ke liye minimum height */
+    /* aspect-ratio: 1 / 1; Maintain aspect ratio if images are square */
+}
+
+.product-image-container img {
+    max-width: 100%;
+    max-height: 200px; /* Max height for image inside container */
+    object-fit: contain; /* Poori image dikhegi, aspect ratio maintain hoga */
+}
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #ff4d4d; /* Default red color for badges */
+    color: white;
+    padding: 6px 10px;
+    border-radius: 50%; /* Gol badge */
+    font-size: 0.75rem;
+    font-weight: bold;
+    line-height: 1;
+    min-width: 40px; /* Minimum width for circle */
+    min-height: 40px; /* Minimum height for circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Agar specific badge types ke liye alag styling chahiye toh:
+.badge-sale { background-color: #ff4d4d; }
+.badge-stockout { background-color: #ff4d4d; }
+.badge-new { background-color: #ff4d4d; }
+*/
+
+.product-details {
+    padding: 20px;
+    text-align: left; /* Content left-aligned */
+    flex-grow: 1; /* Bachi hui space le lega */
+    display: flex;
+    flex-direction: column;
+}
+
+.product-category {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 4px;
+    text-transform: capitalize;
+}
+
+.product-name {
+    font-size: 1rem;
+    font-weight: 500; /* Thoda bold */
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    /* Agar text zyada lamba ho toh use clip karne ke liye (optional):
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: calc(1rem * 1.4 * 2); /* line-height * lines */
+    
+}
+
+.product-price {
+    margin-top: auto; /* Price ko card ke neeche push karega */
+}
+
+.current-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #222;
+}
+
+.old-price {
+    font-size: 0.9rem;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) { /* Small devices */
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .section-description {
+        font-size: 0.9rem;
+    }
+    .product-image-container {
+        min-height: 200px; /* Chhote screens par image container ki height kam */
+    }
+    .product-image-container img {
+        max-height: 160px;
+    }
+    .product-name {
+        font-size: 0.95rem;
+    }
+    .current-price {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) { /* Extra small devices */
+    .product-card {
+        /* Agar 1 column mein dikhana hai, to Bootstrap col-12 class use karein */
+    }
+    .product-image-container {
+        padding: 20px;
+    }
+    .product-details {
+        padding: 15px;
+    }
+}
+/* section4 */
+body {
+    font-family: 'Arial', sans-serif; /* Aap apni pasand ka font istemal kar sakte hain */
+    background-color: #fff; /* Page ka background white */
+}
+
+.winter-discount-section {
+    background-color: #fff; /* Section ka background white */
+}
+
+.image-showcase {
+    background-color: #fdf0ef; /* Image ke peeche ka halka गुलाबी/peach background */
+    padding: 25px; /* Image ke aas-paas padding (background dikhane ke liye) */
+    border-radius: 8px; /* Background ke liye rounded corners (optional) */
+    display: inline-block; /* Taki background image ke size ke hisaab se ho + padding */
+    width: 100%; /* Taki column ki poori width le */
+    text-align: center; /* Image ko center karne ke liye agar woh choti ho */
+}
+
+.discount-image {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Extra space hatane ke liye */
+    margin: 0 auto; /* Image ko center karega agar showcase bada ho */
+    border-radius: 6px; /* Image ke liye rounded corners (optional) */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07); /* Image par halka shadow (optional) */
+}
+
+.discount-text-content {
+    text-align: left; /* Text left aligned */
+}
+
+.intro-text {
+    font-size: 0.85rem;
+    color: #6c757d; /* Bootstrap ka text-muted color */
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.main-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #343a40; /* Dark grey / black */
+    margin-bottom: 0.3rem;
+}
+
+.sub-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #343a40; /* Dark grey / black */
+    margin-bottom: 1.2rem;
+}
+
+.description-text {
+    font-size: 0.9rem;
+    color: #495057; /* Slightly darker grey */
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.btn-shop-now {
+    border: 2px solid #e55353; /* Reddish border */
+    color: #e55353; /* Reddish text */
+    background-color: transparent;
+    padding: 10px 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-shop-now:hover,
+.btn-shop-now:focus {
+    background-color: #e55353;
+    color: #fff;
+    border-color: #e55353;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) { /* Medium devices tak (MD breakpoint Bootstrap ka) */
+    .image-showcase {
+        padding: 15px;
+        text-align: center; /* Ensure image is centered on mobile */
+    }
+    .discount-text-content {
+        text-align: center; /* Mobile par text ko center kar sakte hain */
+        margin-top: 30px; /* Image aur text ke beech space */
+    }
+    .main-title {
+        font-size: 1.9rem;
+    }
+    .sub-title {
+        font-size: 1.5rem;
+    }
+    .intro-text, .description-text {
+        font-size: 0.8rem;
+    }
+}
+/* section5 */
+body {
+    font-family: 'Arial', sans-serif; /* Aap apni pasand ka font istemal kar sakte hain */
+    background-color: #fff; /* Page ka background white */
+}
+
+.product-grid-section {
+    background-color: #fff; /* Section ka background bhi white */
+}
+
+.product-card {
+    background-color: #fff; /* Card ka background white */
+    /* border: 1px solid #f0f0f0; Halka sa border (optional) */
+    border-radius: 4px; /* Thode se rounded corners */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Taaki sab cards ek height ke lage agar content alag ho */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+}
+
+.product-image-container {
+    background-color: #f7f8fa; /* Image ke peeche ka bahut halka grey background */
+    padding: 20px; /* Image ke aas-paas padding */
+    position: relative; /* Badge positioning ke liye */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px; /* Image container ke liye minimum height (adjust karein) */
+    /* aspect-ratio: 1 / 1; /* Square aspect ratio agar zaroori ho */
+}
+
+.product-image-container img {
+    max-width: 100%;
+    max-height: 180px; /* Image ki max height (adjust karein) */
+    object-fit: contain; /* Poori image dikhegi, aspect ratio maintain hoga */
+}
+
+.product-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #ff4d4d; /* Red color for badges */
+    color: white;
+    padding: 0; /* Padding ko width/height se control karenge */
+    border-radius: 50%; /* Gol badge */
+    font-size: 0.7rem; /* Badge ke andar text ka size */
+    font-weight: bold;
+    line-height: 1;
+    width: 40px; /* Badge ki width */
+    height: 40px; /* Badge ki height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.product-badge.badge-stockout {
+    font-size: 0.6rem; /* "Stock Out" ke liye thoda chhota font */
+}
+
+
+.product-details {
+    padding: 15px; /* Details ke liye padding */
+    text-align: left; /* Content left-aligned */
+    flex-grow: 1; /* Bachi hui space le lega */
+    display: flex;
+    flex-direction: column;
+}
+
+.product-category {
+    font-size: 0.75rem; /* Category ka font size */
+    color: #888;
+    margin-bottom: 3px;
+    text-transform: capitalize;
+}
+
+.product-name {
+    font-size: 0.9rem; /* Product naam ka font size */
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    /* Agar text zyada lamba ho toh use clip karne ke liye (optional):
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: calc(0.9rem * 1.4 * 2); /* line-height * lines */
+    
+}
+
+.product-price {
+    margin-top: auto; /* Price ko card ke neeche push karega */
+}
+
+.current-price {
+    font-size: 1rem; /* Current price ka font size */
+    font-weight: bold;
+    color: #222;
+}
+
+.old-price {
+    font-size: 0.85rem; /* Old price ka font size */
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 6px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) { /* MD breakpoint (tablets) */
+    /* Using col-md-4, so 3 items per row */
+}
+
+@media (max-width: 767.98px) { /* SM breakpoint (landscape phones) */
+     /* Using col-sm-6, so 2 items per row */
+    .product-image-container {
+        min-height: 180px;
+    }
+    .product-image-container img {
+        max-height: 150px;
+    }
+    .product-name {
+        font-size: 0.85rem;
+    }
+    .current-price {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 575.98px) { /* XS breakpoint (portrait phones) */
+    /* Bootstrap columns will stack to 1 item per row if col-12 is used,
+       or stay 2 per row if col-sm-6 is the smallest defined.
+       Adjust col-sm-6 to col-12 if 1 item per row is needed on XS.
+       Using col-sm-6 for 2 items on small screens.
+    */
+}
+/* footer section */
+body {
+    font-family: 'Arial', sans-serif; /* Aap apni pasand ka font istemal kar sakte hain */
+    /* Baaki body styles aapke project ke anusaar */
+}
+
+.site-footer {
+    background-color: #f8f9fa; /* Footer ka halka grey background (jaisa image mein hai) */
+    color: #555e67; /* Default text color */
+    font-size: 0.875rem; /* Chhota font size footer ke liye */
+}
+
+.footer-widget {
+    /* Agar zaroorat ho toh individual widget ke liye padding/margin */
+}
+
+/* Logo Styling */
+.footer-logo a {
+    /* Logo link ke liye styles */
+}
+.logo-cart-icon {
+    font-size: 1.6rem; /* Cart icon ka size */
+    color: #212529; /* Cart icon ka color (black) */
+    /* Image mein cart icon par red arrow hai, jo yahan simple icon se nahi banega.
+       Asli logo ke liye SVG ya image use karein. */
+}
+.logo-text-dax, .logo-text-one {
+    font-size: 1.7rem; /* "Daxone" text ka size */
+    font-weight: 700; /* Bold text */
+    line-height: 1; /* Icon ke saath a Align karne ke liye */
+}
+.logo-text-dax {
+    color: #212529; /* "Dax" ka color (black) */
+}
+.logo-text-one {
+    color: #d9534f; /* "one" ka color (reddish - image se milta julta) */
+}
+
+
+.follow-us-text {
+    font-size: 0.8rem;
+    color: #6c757d; /* Bootstrap muted color */
+    margin-bottom: 0.5rem !important;
+}
+
+/* Social Icons */
+.social-icons .list-inline-item:not(:last-child) {
+    margin-right: 0.8rem; /* Icons ke beech space */
+}
+.social-icons li a {
+    color: #6c757d;
+    font-size: 0.9rem; /* Social icons ka size */
+    transition: color 0.3s ease;
+}
+.social-icons li a:hover {
+    color: #d9534f; /* Hover par reddish color */
+}
+
+/* Widget Titles */
+.widget-title {
+    font-size: 0.75rem; /* Title ka size */
+    font-weight: 700; /* Bold title */
+    color: #343a40; /* Darker title color */
+    text-transform: uppercase;
+    margin-bottom: 1.2rem; /* Title ke neeche space */
+    letter-spacing: 0.5px;
+}
+
+/* Footer Links */
+.footer-links li {
+    margin-bottom: 0.6rem; /* Links ke beech space */
+}
+.footer-links li a {
+    color: #555e67; /* Link ka color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-links li a:hover {
+    color: #d9534f; /* Hover par reddish color */
+}
+
+/* Newsletter */
+.newsletter-description {
+    font-size: 0.85rem;
+    color: #555e67;
+}
+
+.newsletter-form .input-group {
+    border-bottom: 1px solid #ced4da; /* Input ke neeche halki border */
+    padding-bottom: 2px;
+}
+
+.newsletter-form .form-control {
+    background-color: transparent;
+    border: none;
+    box-shadow: none !important; /* Bootstrap ke default shadow ko hatayein */
+    padding-left: 0;
+    font-size: 0.875rem;
+    color: #495057;
+}
+.newsletter-form .form-control::placeholder {
+    color: #adb5bd; /* Placeholder ka halka color */
+}
+.newsletter-form .form-control:focus {
+    background-color: transparent;
+}
+
+.newsletter-form .btn-submit-newsletter {
+    background-color: transparent;
+    border: none;
+    color: #6c757d; /* Icon ka color */
+    padding-right: 0;
+    padding-left: 0.5rem;
+    transition: color 0.3s ease;
+}
+.newsletter-form .btn-submit-newsletter:hover {
+    color: #d9534f; /* Hover par reddish color */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) { /* Large devices se neeche (tablets) */
+    .footer-widget {
+        /* margin-bottom: 30px; Bootstrap `mb-4` class yeh handle kar rahi hai */
+    }
+}
+
+@media (max-width: 767.98px) { /* Medium devices se neeche (landscape phones) */
+    .site-footer {
+        text-align: center; /* Chhote screens par content center mein */
+    }
+    .footer-logo a {
+        justify-content: center; /* Logo ko center karein */
+    }
+    .social-icons {
+        justify-content: center; /* Social icons ko center karein */
+    }
+    .widget-title {
+        margin-top: 1rem; /* Pehle widget ke alawa baaki titles ke upar thoda space */
+    }
+    .footer-widget:first-child .widget-title {
+        margin-top: 0; /* Pehle widget ka title ka top margin na ho */
+    }
+    .newsletter-form .input-group {
+        max-width: 300px; /* Input ko thoda chhota rakhein center mein */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

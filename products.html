@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daxone Product Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
+
+    <!-- Header (Simplified - you can replace with your full header) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <!-- Replace with your actual logo -->
+                <img src="logo-1.webp" alt="Daxone Logo" style="height: 30px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about us .html">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shops</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center header-icons">
+                    <a href="#"><i class="fas fa-heart"></i></a>
+                    <a href="#"><i class="fas fa-user"></i></a>
+                    <a href="#" class="ms-3">
+                        <span class="cart-price">$240</span>
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Section -->
+    <section class="product-section" style="padding-top: 100px;"> 
+        <div class="container">
+            <div class="row">
+                <!-- Product Images Column -->
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="main-product-image-container">
+                        <span class="discount-badge">-29%</span>
+                        <img src="comfort.webp" alt="Main Product Image" class="main-product-image" id="mainProductImage">
+                    </div>
+                    <div class="product-thumbnails mt-3 d-flex align-items-center">
+                        <span class="thumbnail-nav me-2" id="prevThumbnail"><i class="fas fa-chevron-left"></i></span>
+                        <div class="thumbnail-scroll-container flex-grow-1">
+                            <img src="black chair.webp" alt="Thumbnail 1" class="product-thumbnail active" data-fullimage="https://i.imgur.com/rWZUP1V.png">
+                            <img src="sofa chair.webp" alt="Thumbnail 2" class="product-thumbnail" data-fullimage="https://i.imgur.com/y3X0g3c.png">
+                            <img src="net chair.webp" alt="Thumbnail 3" class="product-thumbnail" data-fullimage="https://i.imgur.com/xTqA4fT.png">
+                            <img src="design.webp" alt="Thumbnail 4" class="product-thumbnail" data-fullimage="https://i.imgur.com/7bWJq8n.png">
+                            <!-- Add more thumbnails as needed -->
+                        </div>
+                        <span class="thumbnail-nav ms-2" id="nextThumbnail"><i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- Product Details Column -->
+                <div class="col-lg-6 product-details">
+                    <p class="category">Life Style</p>
+                    <h1 class="product-title">LaaVista Depro, FX 829 v1</h1>
+
+                    <div class="product-reviews d-flex align-items-center mb-3">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i> <!-- Example for half star -->
+                            <!-- <i class="far fa-star"></i> for empty star -->
+                        </div>
+                        <span class="review-count ms-2">40+ Reviews</span>
+                    </div>
+
+                    <div class="product-color-selector mb-4">
+                        <h6>Color:</h6>
+                        <span class="color-swatch active" style="background-color: #66DDB3;" data-color="Green"></span>
+                        <span class="color-swatch" style="background-color: #FFCA28;" data-color="Yellow"></span>
+                        <span class="color-swatch" style="background-color: #FF5252;" data-color="Red"></span>
+                        <span class="color-swatch" style="background-color: #5C6BC0;" data-color="Blue"></span>
+                    </div>
+
+                    <div class="product-size-selector mb-4">
+                        <h6>Size:</h6>
+                        <span class="size-option active" data-size="S">S</span>
+                        <span class="size-option" data-size="M">M</span>
+                        <span class="size-option" data-size="XL">XL</span>
+                        <span class="size-option" data-size="XXL">XXL</span>
+                    </div>
+
+                    <div class="product-price-section d-flex align-items-center mb-4">
+                        <span class="current-price">$210.00</span>
+                        <span class="original-price">$230.00</span>
+                        <span class="discount-percentage">-30%</span>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="quantity-selector me-4">
+                            <button class="quantity-btn" id="decreaseQuantity" aria-label="Decrease quantity">-</button>
+                            <input type="number" class="quantity-input" id="quantityInput" value="2" min="1" aria-label="Quantity">
+                            <button class="quantity-btn" id="increaseQuantity" aria-label="Increase quantity">+</button>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="me-3"><i class="fas fa-sync-alt"></i> Compare</a>
+                            <a href="#"><i class="fas fa-heart"></i> Add to wish list</a>
+                        </div>
+                    </div>
+    <button class="read"><li class="nav-item"><a class="nav-link" href="cart.html">ADD TO CART</a></li></button>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Product Information Tabs Section -->
+    <section class="product-info-tabs-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Nav Tabs -->
+                    <ul class="nav nav-tabs justify-content-center mb-4" id="productInfoTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="description-tab" data-bs-toggle="tab" data-bs-target="#description-content" type="button" role="tab" aria-controls="description-content" aria-selected="false">Description</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="specification-tab" data-bs-toggle="tab" data-bs-target="#specification-content" type="button" role="tab" aria-controls="specification-content" aria-selected="true">Specification</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews-content" type="button" role="tab" aria-controls="reviews-content" aria-selected="false">Reviews</button>
+                        </li>
+                    </ul>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content" id="productInfoTabsContent">
+                        <div class="tab-pane fade" id="description-content" role="tabpanel" aria-labelledby="description-tab">
+                            <h5 class="mb-3">Product Description</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.</p>
+                        </div>
+                        <div class="tab-pane fade show active" id="specification-content" role="tabpanel" aria-labelledby="specification-tab">
+                            <!-- Specification Table -->
+                            <div class="table-responsive">
+                                <table class="table specification-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Name / Model</td>
+                                            <td>LaaVista Depro, FX 829 v1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Type</td>
+                                            <td>Categories</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Models</td>
+                                            <td>FX 829 v1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Categories</td>
+                                            <td>Product Type</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Size</td>
+                                            <td>60" x 40"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Display Port</td>
+                                            <td>Multi</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Media</td>
+                                            <td>Brightside</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Color</td>
+                                            <td>Black, White</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="reviews-content" role="tabpanel" aria-labelledby="reviews-tab">
+                            <h5 class="mb-3">Customer Reviews (Example)</h5>
+                            <div class="review-item mb-4 pb-3 border-bottom">
+                                <h6>John Doe <small class="text-muted">- 2 days ago</small></h6>
+                                <div class="stars mb-1">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                </div>
+                                <p>Great product! High quality and exactly as described. Would recommend to anyone looking for a stylish and functional chair.</p>
+                            </div>
+                            <div class="review-item">
+                                <h6>Jane Smith <small class="text-muted">- 1 week ago</small></h6>
+                                <div class="stars mb-1">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p>Very comfortable and looks amazing in my office. The color options were great. Assembly was straightforward.</p>
+                            </div>
+                            <!-- Add more reviews or a review submission form here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Related Products Section -->
+    <section class="related-products-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="section-title mb-5">Related Product</h2>
+                </div>
+            </div>
+            <div class="row gy-4"> 
+                <!-- Related Product Card 1 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="related-product-card">
+                        <a href="#" class="related-product-link">
+                            <div class="related-product-image-wrapper">
+                                <img src="table.webp" alt="Related Product 1" class="related-product-image">
+                            </div>
+                            <div class="related-product-info">
+                                <p class="related-product-category">Chair</p>
+                                <h5 class="related-product-name">Golden Easy Spot Chair.</h5>
+                                <p class="related-product-price">
+                                    <span class="current-price">$210.00</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Related Product Card 2 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="related-product-card">
+                        <a href="#" class="related-product-link">
+                            <div class="related-product-image-wrapper">
+                                <img src="black chair.webp" alt="Related Product 2" class="related-product-image">
+                            </div>
+                            <div class="related-product-info">
+                                <p class="related-product-category">Chair</p>
+                                <h5 class="related-product-name">Golden Easy Spot Chair.</h5>
+                                <p class="related-product-price">
+                                    <span class="current-price">$210.00</span>
+                                    <span class="original-price">$230.00</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Related Product Card 3 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="related-product-card">
+                        <a href="#" class="related-product-link">
+                            <div class="related-product-image-wrapper">
+                                <img src="design.webp" alt="Related Product 3" class="related-product-image">
+                            </div>
+                            <div class="related-product-info">
+                                <p class="related-product-category">Chair</p>
+                                <h5 class="related-product-name">Golden Easy Spot Chair.</h5>
+                                <p class="related-product-price">
+                                    <span class="current-price">$250.00</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Related Product Card 4 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="related-product-card">
+                        <a href="#" class="related-product-link">
+                            <div class="related-product-image-wrapper">
+                                <img src="net chair.webp" alt="Related Product 4" class="related-product-image">
+                            </div>
+                            <div class="related-product-info">
+                                <p class="related-product-category">Chair</p>
+                                <h5 class="related-product-name">Golden Easy Spot Chair.</h5>
+                                <p class="related-product-price">
+                                    <span class="current-price">$320.00</span>
+                                    <span class="original-price">$420.00</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                 <!-- Add more col-lg-3 col-md-4 col-sm-6 divs for more products -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer pt-5 pb-3">
+        <div class="container">
+            <!-- Main Footer Content -->
+            <div class="row pb-4">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 footer-widget">
+                    <div class="footer-logo mb-3">
+                        <!-- Replace with your actual dark logo -->
+                        <img src="logo-1.webp" alt="Daxone Logo" style="height: 35px;">
+                        <!-- Or if you have a dark version of your previous logo:
+                        <img src="path/to/your-dark-daxone-logo.png" alt="Daxone Logo">
+                        -->
+                    </div>
+                    <p class="footer-description">
+                        On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-6 mb-4 mb-lg-0 footer-widget">
+                    <h5 class="widget-title">Company</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">About US</a></li>
+                        <li><a href="#">Blogs</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-6 mb-4 mb-lg-0 footer-widget">
+                    <h5 class="widget-title">Product</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Customers</a></li>
+                        <li><a href="#">Demos</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-6 mb-4 mb-lg-0 footer-widget">
+                    <h5 class="widget-title">Helps</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Introduction</a></li>
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">Referrals</a></li>
+                        <li><a href="#">Network Status</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-6 mb-4 mb-lg-0 footer-widget">
+                    <h5 class="widget-title">Social Network</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Google +</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tags Section -->
+            <hr class="footer-divider">
+            <div class="row py-3">
+                <div class="col-12 footer-tags">
+                    <strong>TAGS :</strong>
+                    <span>Minimal eCommerce</span> /
+                    <span>Marketing</span> /
+                    <span>User Experience</span> /
+                    <span>Ali Express</span> /
+                    <span>Web</span> /
+                    <span>Digital Expo</span> /
+                    <span>Web Search</span> /
+                    <span>Affiliate</span> /
+                    <span>UCWeb</span> /
+                    <span>Support</span> /
+                    <span>Theme</span> /
+                    <span>Best Quality</span> /
+                    <span>Mobile</span> /
+                    <span>24 Support</span> /
+                    <span>Ali Express</span> /
+                    <span>Web</span> /
+                    <span>Laptop</span> /
+                    <span>Web Search</span> /
+                    <span>Affiliate</span> /
+                    <span>Photoshop</span> /
+                    <span>Support</span> /
+                    <span>Theme.</span>
+                </div>
+            </div>
+
+            <!-- Copyright Section -->
+            <hr class="footer-divider">
+            <div class="row pt-3">
+                <div class="col-12 text-center footer-copyright">
+                    <p>Copyright © Daxone. All Right Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery (optional, but used for simplicity in custom JS) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

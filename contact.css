@@ -1,0 +1,226 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* Overall page background */
+    /* The actual sections will override this if needed */
+}
+
+/* Navbar Customization */
+.navbar-brand img {
+    height: 24px; /* Adjust as needed */
+}
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: 500;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: #DC3545; /* Your theme's red color */
+}
+.navbar-nav .nav-link i {
+    font-size: 1.1rem;
+}
+.navbar .text-danger {
+    color: #DC3545 !important; /* Ensure red color */
+}
+.navbar.sticky-top {
+    z-index: 1030; /* Ensure navbar stays above other content, especially scroll-to-top */
+}
+/* section2 */
+/* Get In Touch Section */
+.get-in-touch-section {
+    background-color: #ffffff; /* White background for the section */
+}
+
+.get-in-touch-section h2 {
+    color: #333;
+}
+
+.custom-form-control {
+    background-color: #f8f9fa; /* Very light grey, almost white, similar to image */
+    border: 1px solid #f8f9fa; /* Match background to appear borderless */
+    border-radius: 0.25rem; /* Standard Bootstrap rounding */
+    padding: 0.75rem 1rem; /* Adjust padding as needed */
+    font-size: 0.9rem;
+    color: #495057; /* Default text color */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.custom-form-control::placeholder {
+    color: #6c757d; /* Muted placeholder text */
+    opacity: 1; /* Firefox fix */
+}
+
+.custom-form-control:focus {
+    background-color: #f8f9fa;
+    border-color: #DC3545; /* Theme red color for focus border */
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); /* Theme red focus shadow */
+    color: #495057;
+}
+
+.custom-submit-btn {
+    background-color: #f0404e; /* Specific red from image (adjust if needed) */
+    border-color: #f0404e;
+    padding: 0.6rem 1.5rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.custom-submit-btn:hover {
+    background-color: #d9303e; /* Darker shade of red for hover */
+    border-color: #d9303e;
+}
+
+
+
+
+/* Contact Info Section */
+.contact-info-section {
+    background-color: #ffffff; /* White background for the section */
+}
+
+.contact-info-section h2 {
+    color: #333; /* Dark grey for the heading */
+}
+
+.contact-card {
+    background-color: #f8f9fa; /* Very light grey, almost white for the cards */
+    border-radius: 0.25rem; /* Optional: slight rounding of corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content if card height varies */
+}
+
+.contact-icon i {
+    font-size: 2.5rem; /* Larger icon size */
+    color: #DC3545;   /* Theme red color */
+}
+
+.contact-icon-small i {
+    font-size: 1.2rem; /* Smaller icon size for phone/email */
+    color: #DC3545;   /* Theme red color */
+}
+
+.contact-card h5 {
+    color: #212529; /* Darker title */
+}
+
+.contact-card .text-muted {
+    color: #555 !important; /* Adjust muted text color if needed */
+}
+
+.contact-hr {
+    border-top: 1px solid #e0e0e0; /* Light grey horizontal rule */
+    width: 80%; /* Make it not full width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* For the middle card with two items, we want the items aligned left */
+.contact-card .contact-item {
+    text-align: left;
+}
+.contact-card .contact-item p {
+    flex-grow: 1; /* Make text take remaining space */
+}
+
+/* Ensure card content is vertically centered in the middle card as well if it's taller */
+.col-lg-4 .contact-card.h-100 { /* Scoped to col-lg-4 to avoid conflict with blog cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* Footer Section Styling */
+.footer-section {
+    background-color: #f8f9fa; /* Light gray background, similar to Bootstrap's .bg-light */
+    font-size: 0.9rem;
+    color: #555; /* Default text color for footer */
+}
+
+.footer-logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #212529; /* Darker color for the logo text */
+}
+.footer-logo img {
+    height: 24px; /* Adjust as needed */
+}
+
+.footer-section h6 {
+    font-size: 0.9rem; /* Slightly smaller for a denser look */
+    color: #212529; /* Darker heading color */
+    margin-bottom: 1rem; /* Ensure consistent spacing */
+}
+
+.footer-links li a {
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    font-size: 0.875rem; /* Slightly smaller link text */
+}
+.footer-links li a.text-muted:hover {
+    color: #DC3545 !important; /* Theme red color on hover */
+}
+
+.tags-section {
+    line-height: 1.9; /* Increased line-height for better readability of wrapped tags */
+    font-size: 0.85rem;
+    color: #6c757d; /* Muted color for slashes and default tag text */
+}
+.tags-section strong {
+    color: #343a40; /* Darker for the "TAGS" label */
+}
+.tags-section .tag-link {
+    color: #555; /* Slightly darker than muted for tags */
+    text-decoration: none;
+    margin-right: 2px; /* Adjust spacing around slashes */
+    margin-left: 2px;
+    white-space: nowrap; /* Prevents tags from breaking mid-word, but allows overall line wrap */
+}
+.tags-section .tag-link:hover {
+    color: #DC3545;
+    text-decoration: none; /* Or underline if you prefer */
+}
+
+.footer-section hr {
+    border-top: 1px solid #e0e0e0; /* Lighter horizontal rule */
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #DC3545; /* Theme red */
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex; /* For centering icon */
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 1029; /* Ensure it's above other content but below sticky navbar if any */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    opacity: 0; /* Start hidden */
+    visibility: hidden;
+    transform: translateY(20px); /* Start slightly offset for entry animation */
+}
+
+.scroll-top-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+    color: white;
+    transform: translateY(18px) scale(1.05); /* Slight lift on hover */
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}

@@ -1,0 +1,411 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+}
+
+/* Header Styles */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.75rem; /* Daxone text size */
+}
+.navbar-brand .fa-shopping-cart {
+    color: #ff5252; /* Daxone logo cart icon color */
+}
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: 500;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: #ff5252;
+}
+.header-icons a {
+    color: #333;
+    text-decoration: none;
+}
+.header-icons a:hover {
+    color: #ff5252;
+}
+.header-cart-total {
+    color: #ff5252; /* Cart total color */
+    font-weight: 700;
+}
+
+/* Cart Section Styles */
+.cart-section {
+    padding: 60px 0;
+}
+.cart-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333;
+}
+.cart-table-header {
+    background-color: #f8f9fa; /* Light grey background for header */
+    padding: 10px 15px;
+    border: 1px solid #dee2e6;
+    border-bottom: none; /* To merge with first item's top border effectively */
+    font-size: 0.85rem;
+    color: #333; /* Header text color */
+}
+ .cart-table-header .fw-bold { /* Ensure header text is bold */
+    font-weight: 600 !important;
+}
+
+.cart-item {
+    border: 1px solid #dee2e6;
+    border-top: none; /* Avoid double border with header or previous item */
+    padding: 20px 15px;
+    background-color: #fff;
+}
+.cart-item:first-of-type { /* If header is separate, this ensures top border for first item */
+     /* border-top: 1px solid #dee2e6; */
+}
+/* .cart-item:last-of-type {
+    border-bottom: 1px solid #dee2e6;
+} */
+
+.cart-item img {
+    max-width: 80px;
+    max-height: 80px;
+    object-fit: contain;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+.cart-item h6 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+}
+.cart-item p {
+    font-size: 0.9rem;
+    color: #555;
+}
+.cart-item .fw-bold {
+    color: #333;
+}
+
+.quantity-selector {
+    max-width: 120px;
+}
+.quantity-selector .form-control {
+    text-align: center;
+    font-size: 0.9rem;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+}
+.quantity-selector .btn {
+    border-color: #ced4da;
+    padding: 0.3rem 0.6rem;
+}
+.quantity-selector .btn:hover {
+    background-color: #e9ecef;
+}
+
+.action-icons a {
+    color: #777;
+    font-size: 0.9rem;
+    margin: 0 5px;
+}
+.action-icons a:hover {
+    color: #ff5252;
+}
+
+/* Mobile specific labels */
+.cart-item-label {
+    font-size: 0.75rem;
+    color: #6c757d;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+/* Scroll to top button */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #ff5252; /* Red color from image */
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+#scrollTopBtn:hover {
+    background-color: #e04444; /* Darker red on hover */
+}
+
+/* Animation */
+.animated-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Stagger animations */
+.cart-list .animated-item:nth-child(1) { animation-delay: 0.1s; }
+.cart-list .animated-item:nth-child(2) { animation-delay: 0.2s; }
+.cart-list .animated-item:nth-child(3) { animation-delay: 0.3s; }
+.cart-list .animated-item:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) { /* Small devices (tablets, 768px and up, but below lg) */
+    .cart-item {
+        padding: 15px;
+    }
+     .cart-item .text-lg-center { /* For actions */
+        text-align: left !important; /* Align actions left on mobile */
+    }
+}
+ @media (min-width: 992px) {
+    .cart-item-label.d-lg-none {
+        display: none !important;
+    }
+}
+@media (max-width: 767.98px) { /* Extra small devices (phones, less than 768px) */
+    .cart-item .col-6 {
+        /* Adjustments for smaller screens if needed for Qty, Subtotal, Action */
+    }
+    .cart-item .text-lg-center { /* For actions */
+         margin-top: 10px;
+    }
+    .cart-section {
+        padding: 30px 0;
+    }
+     .cart-title {
+        font-size: 1.25rem;
+        margin-bottom: 20px;
+    }
+}
+/* section2 */
+/* Cart Summary Section (Shipping, Coupon, Totals) Styles */
+.cart-summary-section {
+    background-color: #fff; /* Main page background if different from cards */
+}
+
+.summary-card {
+    background-color: #f8f9fa; /* Light grey for individual cards */
+    border: 1px solid #e9ecef; /* Subtle border for cards */
+    border-radius: 0.25rem; /* Slight rounding of corners */
+    display: flex;
+    flex-direction: column; /* Ensure content within card stacks vertically */
+}
+
+.summary-card-title {
+    font-size: 1.05rem; /* Slightly smaller than main cart title */
+    font-weight: 600;
+    color: #343a40; /* Darker grey for titles */
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #dee2e6; /* Line under title */
+}
+
+.summary-card-description {
+    font-size: 0.875rem;
+    color: #6c757d; /* Grey for description text */
+    margin-bottom: 1.25rem;
+}
+
+.summary-card .form-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 0.3rem;
+}
+/* Adding asterisk via HTML is more reliable: <label for="country" class="form-label">* Country</label> */
+
+.summary-card .form-select,
+.summary-card .form-control {
+    font-size: 0.9rem;
+    background-color: #fff; /* White background for inputs */
+    border: 1px solid #ced4da;
+    padding: 0.5rem 0.75rem; /* Adjust padding for inputs */
+}
+
+.summary-card .form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+}
+
+
+.btn-dark-custom { /* Custom dark button to match image */
+    background-color: #212529; /* Dark grey similar to image */
+    border-color: #212529;
+    color: #fff;
+    font-size: 0.75rem; /* Smaller font size for buttons */
+    font-weight: 600; /* Slightly bolder */
+    padding: 0.65rem 1rem; /* Button padding */
+    letter-spacing: 0.05em; /* Slight letter spacing */
+}
+
+.btn-dark-custom:hover {
+    background-color: #343a40;
+    border-color: #343a40;
+    color: #fff;
+}
+
+/* Cart Total Specifics */
+.cart-total-line-item span, 
+.cart-total-line-item strong {
+    font-size: 0.9rem;
+}
+.cart-total-line-item .text-dark-emphasis { /* Make product total value a bit darker */
+    color: #343a40 !important; 
+}
+
+.summary-card h6 { /* "Total shipping" heading */
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #343a40;
+}
+
+.summary-card .form-check-label {
+    font-size: 0.9rem;
+    color: #495057;
+}
+.summary-card .form-check-label span { /* Price for shipping option */
+    color: #343a40;
+}
+.summary-card .form-check-input {
+    border-color: #adb5bd;
+}
+.summary-card .form-check-input:checked {
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+
+.grand-total-label {
+    color: #ff5252; /* Red color for Grand Total label */
+    font-weight: 700;
+    font-size: 1rem; /* Slightly larger Grand Total text */
+}
+.grand-total-amount {
+    color: #ff5252; /* Red color for Grand Total amount */
+    font-weight: 700;
+    font-size: 1.1rem; /* Slightly larger Grand Total text */
+}
+
+/* Animations for Summary Section */
+.animated-summary-item {
+    opacity: 0;
+    transform: translateY(30px); /* Slightly more pronounced initial offset */
+    animation: fadeInUpSummary 0.5s ease-out forwards;
+}
+
+@keyframes fadeInUpSummary {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger animations for summary items */
+.cart-summary-section .row .animated-summary-item:nth-child(1) { 
+    animation-delay: 0.2s; /* Start after previous section's items */
+}
+.cart-summary-section .row .animated-summary-item:nth-child(2) { 
+    animation-delay: 0.3s; 
+}
+.cart-summary-section .row .animated-summary-item:nth-child(3) { 
+    animation-delay: 0.4s; 
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) { /* Medium devices (tablets) */
+    .summary-card-title {
+        font-size: 1rem;
+    }
+    .summary-card-description {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 767.98px) { /* Small devices (phones) */
+    .cart-summary-section {
+        padding-top: 30px; /* Less padding on mobile */
+        padding-bottom: 30px;
+    }
+    .summary-card {
+        padding: 1rem; /* Less padding inside cards on mobile */
+    }
+     /* Ensure Cart Total is full width on md, already handled by col-md-12 */
+    .grand-total-label, .grand-total-amount {
+        font-size: 1rem;
+    }
+    .btn-dark-custom {
+        font-size: 0.7rem;
+        padding: 0.6rem 0.8rem;
+    }
+}
+/* Footer Links */
+.footer-links li {
+    margin-bottom: 0.6rem; /* Links ke beech space */
+}
+.footer-links li a {
+    color: #555e67; /* Link ka color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-links li a:hover {
+    color: #d9534f; /* Hover par reddish color */
+}
+
+/* Newsletter */
+.newsletter-description {
+    font-size: 0.85rem;
+    color: #555e67;
+}
+
+.newsletter-form .input-group {
+    border-bottom: 1px solid #ced4da; /* Input ke neeche halki border */
+    padding-bottom: 2px;
+}
+
+.newsletter-form .form-control {
+    background-color: transparent;
+    border: none;
+    box-shadow: none !important; /* Bootstrap ke default shadow ko hatayein */
+    padding-left: 0;
+    font-size: 0.875rem;
+    color: #495057;
+}
+.newsletter-form .form-control::placeholder {
+    color: #adb5bd; /* Placeholder ka halka color */
+}
+.newsletter-form .form-control:focus {
+    background-color: transparent;
+}
+
+.newsletter-form .btn-submit-newsletter {
+    background-color: transparent;
+    border: none;
+    color: #6c757d; /* Icon ka color */
+    padding-right: 0;
+    padding-left: 0.5rem;
+    transition: color 0.3s ease;
+}
+.newsletter-form .btn-submit-newsletter:hover {
+    color: #d9534f; /* Hover par reddish color */
+}

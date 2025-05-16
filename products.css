@@ -1,0 +1,915 @@
+body {
+    font-family: 'Roboto', 'Arial', sans-serif; /* Example font, replace with Daxone's font if known */
+    background-color: #fff; /* Main background often white for e-commerce */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Header Styles (Simplified) --- */
+.navbar-brand img {
+    height: 30px; /* Adjust as needed */
+}
+.navbar-nav .nav-link {
+    color: #333;
+    margin: 0 10px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: capitalize;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #e74c3c; /* Theme color */
+}
+.header-icons a {
+    color: #555;
+    margin-left: 18px;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+.header-icons a:hover {
+    color: #e74c3c;
+}
+.cart-price {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-right: 5px;
+}
+.navbar.fixed-top { /* Ensure content doesn't hide behind fixed navbar */
+    border-bottom: 1px solid #eee;
+}
+
+
+/* --- Product Section Styles --- */
+.product-section {
+    padding-top: 80px; /* Adjust if navbar height changes */
+    padding-bottom: 60px;
+    opacity: 0; /* For fade-in animation */
+    animation: fadeInAnimation 0.8s 0.2s ease-out forwards; /* Added delay */
+}
+
+@keyframes fadeInAnimation {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.main-product-image-container {
+    position: relative;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f9f9f9; /* Light background for the image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.main-product-image-container:hover {
+    transform: scale(1.01); /* Subtle zoom */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.main-product-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1 / 1; /* Maintain square aspect ratio, adjust if needed */
+    object-fit: contain; /* Or 'cover' depending on desired image behavior */
+}
+.discount-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #e74c3c; /* Daxone's red */
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 4px;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.product-thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+}
+.thumbnail-nav {
+    cursor: pointer;
+    color: #888;
+    font-size: 1.3rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 5px;
+}
+.thumbnail-nav:hover {
+    color: #e74c3c;
+    transform: scale(1.1);
+}
+.thumbnail-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    flex-grow: 1;
+    padding: 5px 0;
+}
+.thumbnail-scroll-container::-webkit-scrollbar {
+    height: 6px;
+}
+.thumbnail-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    border-radius: 3px;
+}
+
+.product-thumbnail {
+    width: 75px;
+    height: 75px;
+    object-fit: cover; /* Changed to cover for better thumbnail appearance */
+    border: 2px solid #eee;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0; /* Prevent thumbnails from shrinking */
+}
+.product-thumbnail:hover {
+    border-color: #e74c3c;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.product-thumbnail.active {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 2px #e74c3c; /* Stronger active indicator */
+}
+
+/* Product Details Specifics */
+.product-details .category {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.product-details .product-title {
+    font-size: 2rem; /* Slightly larger */
+    font-weight: 600; /* Bolder */
+    margin-bottom: 15px;
+    color: #222;
+    line-height: 1.3;
+}
+.product-reviews {
+    margin-bottom: 20px;
+}
+.product-reviews .stars {
+    font-size: 1rem; /* Adjust star size */
+}
+.product-reviews .stars .fa-star,
+.product-reviews .stars .fa-star-half-alt {
+    color: #ffb400; /* Gold star color */
+}
+.product-reviews .stars .far.fa-star { /* For empty Font Awesome regular star */
+    color: #ddd;
+}
+.product-reviews .review-count {
+    font-size: 0.9rem;
+    color: #555;
+    margin-left: 10px;
+}
+
+.product-color-selector h6, .product-size-selector h6 {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    color: #444;
+}
+.color-swatch {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 5px; /* For wrapping */
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative; /* For ::after pseudo-element */
+}
+.color-swatch:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.color-swatch.active {
+    border-color: #fff; /* White border to contrast with potential black outline */
+    box-shadow: 0 0 0 2px #555; /* Outer ring for active state */
+    transform: scale(1.1);
+}
+
+.size-option {
+    display: inline-block;
+    padding: 7px 18px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-bottom: 8px; /* For wrapping */
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    background-color: #fff;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.size-option:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+    color: #333;
+}
+.size-option.active {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-price-section {
+    margin-bottom: 25px;
+}
+.current-price {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #e74c3c; /* Price in theme color */
+}
+.original-price {
+    font-size: 1.1rem;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 12px;
+    position: relative;
+    top: -2px; /* Align better with current price */
+}
+.discount-percentage {
+    background-color: #222; /* Dark badge for price section */
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    border-radius: 3px;
+    margin-left: 12px;
+    font-weight: bold;
+    position: relative;
+    top: -2px;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    overflow: hidden;
+    width: fit-content;
+    transition: box-shadow 0.3s ease;
+}
+.quantity-selector:hover {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+.quantity-btn {
+    background-color: #f9f9f9;
+    border: none;
+    color: #555;
+    padding: 8px 14px; /* Slightly smaller padding */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.quantity-btn:hover {
+    background-color: #e9ecef;
+    color: #000;
+}
+.quantity-input {
+    width: 45px;
+    text-align: center;
+    border: none;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    font-size: 1rem;
+    padding: 8px 0;
+    font-weight: 600;
+    color: #333;
+    background-color: #fff;
+}
+.quantity-input:focus {
+    outline: none;
+}
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.quantity-input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.product-actions a {
+    color: #555;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.product-actions a:hover {
+    color: #e74c3c;
+}
+.product-actions i {
+    margin-right: 6px;
+    font-size: 0.9em; /* Relative to parent link */
+}
+
+.add-to-cart-btn {
+    background-color: #e74c3c;
+    border: 2px solid #e74c3c;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.add-to-cart-btn:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
+}
+.add-to-cart-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.2);
+}
+
+/* --- Scroll to Top Button --- */
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1030; /* Above most elements */
+    border: none;
+    outline: none;
+    background-color: #e74c3c;
+    color: white;
+    cursor: pointer;
+    padding: 0; /* Reset padding */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    line-height: 45px; /* Vertically center icon */
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+#scrollToTopBtn:hover {
+    background-color: #c0392b;
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991.98px) { /* Medium devices (tablets) */
+    .product-details .product-title {
+        font-size: 1.75rem;
+    }
+    .current-price {
+        font-size: 2rem;
+    }
+    .main-product-image-container {
+        margin-bottom: 30px; /* Space below image on tablets when stacked */
+    }
+}
+
+@media (max-width: 767.98px) { /* Small devices (landscape phones) */
+    .product-section {
+        padding-top: 80px; /* Adjust for potentially taller fixed navbar on mobile */
+    }
+    .product-details .product-title {
+        font-size: 1.5rem;
+    }
+    .current-price {
+        font-size: 1.7rem;
+    }
+    .add-to-cart-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    .quantity-selector {
+        margin-bottom: 15px; /* Reduce bottom margin */
+    }
+    .product-actions {
+        /* Stack actions below quantity on small screens if needed */
+        /* display: block; margin-top: 15px; */
+    }
+    .d-flex.align-items-center.mb-4 { /* Container for quantity and actions */
+        flex-direction: column;
+        align-items: flex-start !important; /* Override Bootstrap's align-items-center */
+    }
+    .quantity-selector.me-4 {
+        margin-right: 0 !important; /* Remove right margin */
+        margin-bottom: 15px;
+    }
+    .navbar-nav {
+        text-align: center; /* Center nav items when toggler is active */
+    }
+    .header-icons {
+        margin-top: 10px; /* Space between nav items and icons in collapsed menu */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575.98px) { /* Extra small devices (portrait phones) */
+    .discount-badge {
+        top: 10px;
+        left: 10px;
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+    .product-thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+    .product-details .product-title {
+        font-size: 1.3rem;
+    }
+    .current-price {
+        font-size: 1.5rem;
+    }
+    .original-price {
+        font-size: 0.9rem;
+    }
+    .color-swatch {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+    }
+    .size-option {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+        margin-right: 8px;
+    }
+    #scrollToTopBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        line-height: 40px;
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+/* section 2 */
+/* --- Product Information Tabs Section --- */
+.product-info-tabs-section {
+    background-color: #f8f9fa; /* Light grey background for the section */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.7s 0.3s ease-out forwards; /* Animation for section entry */
+}
+
+@keyframes fadeInSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-info-tabs-section .nav-tabs {
+    border-bottom: 1px solid #dee2e6; /* Standard Bootstrap tab border */
+}
+
+.product-info-tabs-section .nav-link {
+    color: #6c757d; /* Inactive tab text color - light grey */
+    font-weight: 500;
+    font-size: 1rem; /* Adjust as needed */
+    padding: 0.75rem 1.5rem; /* Adjust padding for tab size */
+    border: none; /* Remove default Bootstrap borders */
+    border-bottom: 3px solid transparent; /* For active indicator */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    margin: 0 5px; /* Spacing between tabs */
+}
+
+.product-info-tabs-section .nav-link:hover {
+    color: #333; /* Darker on hover */
+    border-bottom-color: #ddd; /* Subtle indicator on hover */
+}
+
+.product-info-tabs-section .nav-link.active {
+    color: #212529; /* Active tab text color - dark */
+    font-weight: 600; /* Bolder active tab */
+    background-color: transparent; /* No background for active tab */
+    border-bottom-color: #e74c3c; /* Theme color for active indicator */
+}
+
+.product-info-tabs-section .tab-content {
+    padding-top: 30px; /* Space between tabs and content */
+    background-color: #fff; /* White background for content area */
+    border: 1px solid #dee2e6;
+    border-top: none; /* As top border is handled by nav-tabs bottom border */
+    padding: 25px;
+    border-radius: 0 0 0.25rem 0.25rem; /* Rounded bottom corners */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.product-info-tabs-section .tab-pane {
+    /* Bootstrap 'fade' class handles the animation */
+}
+
+/* Specification Table Styles */
+.specification-table {
+    width: 100%;
+    margin-bottom: 0; /* Remove default table margin if any */
+}
+
+.specification-table td {
+    padding: 12px 15px; /* Padding within cells */
+    vertical-align: middle;
+    font-size: 0.95rem;
+    border-top: 1px solid #f0f0f0; /* Lighter horizontal lines */
+}
+
+.specification-table tr:first-child td {
+    border-top: none; /* No top border for the first row */
+}
+
+.specification-table td:first-child {
+    color: #333; /* Label color */
+    font-weight: 500; /* Slightly bolder labels */
+    width: 30%; /* Adjust width for label column if needed */
+}
+
+.specification-table td:last-child {
+    color: #555; /* Value color */
+}
+
+/* Review Item Styles (Example) */
+.review-item h6 {
+    font-weight: 600;
+    color: #333;
+}
+.review-item .stars i {
+    color: #ffb400; /* Gold star color */
+    font-size: 0.9rem;
+}
+.review-item p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Responsive adjustments for tabs */
+@media (max-width: 767.98px) {
+    .product-info-tabs-section .nav-link {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    .product-info-tabs-section .nav-tabs {
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow-x: auto; /* Allow horizontal scrolling for tabs */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        padding-bottom: 5px; /* Space for scrollbar if visible */
+    }
+    .product-info-tabs-section .nav-tabs::-webkit-scrollbar {
+        height: 4px;
+    }
+    .product-info-tabs-section .nav-tabs::-webkit-scrollbar-thumb {
+        background-color: #ccc;
+        border-radius: 2px;
+    }
+    .product-info-tabs-section .nav-item {
+        flex-shrink: 0; /* Prevent tabs from shrinking */
+    }
+}
+@media (max-width: 575.98px) {
+    .specification-table td {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    .specification-table td:first-child {
+        width: 40%; /* Give more space to labels on very small screens if they wrap */
+    }
+}
+/* --- Related Products Section --- */
+.related-products-section {
+    background-color: #fff; /* Or keep it same as body if preferred */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInSlideUpRelated 0.8s 0.4s ease-out forwards; /* Animation for section entry */
+}
+
+@keyframes fadeInSlideUpRelated {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.related-products-section .section-title {
+    font-size: 2rem; /* Adjust size as needed */
+    font-weight: 600;
+    color: #333;
+    position: relative;
+    padding-bottom: 15px;
+}
+/* Optional: Underline for section title
+.related-products-section .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #e74c3c; // Theme color
+}
+*/
+
+.related-product-card {
+    text-align: center;
+    border: 1px solid transparent; /* Start with transparent border */
+    border-radius: 8px;
+    overflow: hidden; /* Important for image zoom effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    background-color: #fff;
+}
+
+.related-product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #eee; /* Show subtle border on hover */
+}
+
+.related-product-link {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent */
+    display: block; /* Make the whole card clickable */
+}
+
+.related-product-image-wrapper {
+    background-color: #f8f9fa; /* Light grey background for image area */
+    padding: 20px;
+    height: 220px; /* Fixed height for image wrapper, adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Crucial for image zoom effect */
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.related-product-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensures entire image is visible */
+    transition: transform 0.4s ease;
+}
+
+.related-product-card:hover .related-product-image {
+    transform: scale(1.08); /* Zoom effect on image */
+}
+
+.related-product-info {
+    padding: 20px 15px;
+}
+
+.related-product-category {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.related-product-name {
+    font-size: 1rem; /* Was 1rem */
+    font-weight: 500; /* Was 600 */
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    /* Ellipsis for long names if desired */
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+    /* text-overflow: ellipsis; */
+    min-height: 44.8px; /* Approx 2 lines of text to maintain consistent height */
+}
+.read{
+     padding: 10px 40px;
+     border-radius: 40px;
+     background-color: #f8f9fa;
+}
+.read:hover{
+    background-color: #e45b4c;
+}
+
+.related-product-price {
+    font-size: 1rem; /* Was 1.1rem */
+    font-weight: 600;
+    color: #333; /* Was #e74c3c */
+}
+
+.related-product-price .current-price {
+    /* Main price styling is now on .related-product-price */
+}
+
+.related-product-price .original-price {
+    font-size: 0.85rem; /* Was 0.9rem */
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 8px;
+}
+
+/* Responsive adjustments for related product cards */
+@media (max-width: 991.98px) { /* Tablets */
+    .related-product-image-wrapper {
+        height: 200px;
+    }
+    .related-product-name {
+        font-size: 0.95rem;
+    }
+    .related-product-price {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 767.98px) { /* Landscape phones */
+    .related-products-section .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    .related-product-image-wrapper {
+        height: 180px; /* Adjust height for smaller screens */
+    }
+     .related-product-name {
+        min-height: 42px; /* Adjust for smaller font */
+    }
+}
+
+@media (max-width: 575.98px) { /* Portrait phones */
+    .related-product-image-wrapper {
+        height: 160px;
+    }
+    .related-product-name {
+        font-size: 0.9rem;
+    }
+    .related-product-price {
+        font-size: 0.9rem;
+    }
+     .related-product-name {
+        min-height: 40px; /* Adjust for smaller font */
+    }
+}
+/* --- Site Footer --- */
+.site-footer {
+    background-color: #f8f9fa; /* Light grey background as in image */
+    color: #555; /* Default text color for footer */
+    font-size: 0.9rem;
+    line-height: 1.7;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInSlideUpFooter 0.9s 0.5s ease-out forwards; /* Animation for section entry */
+}
+
+@keyframes fadeInSlideUpFooter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer-widget {
+    /* Animation for individual widgets - can be subtle */
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeInWidget 0.6s ease-out forwards;
+}
+/* Stagger animation for widgets */
+.footer-widget:nth-child(1) { animation-delay: 0.6s; }
+.footer-widget:nth-child(2) { animation-delay: 0.7s; }
+.footer-widget:nth-child(3) { animation-delay: 0.8s; }
+.footer-widget:nth-child(4) { animation-delay: 0.9s; }
+.footer-widget:nth-child(5) { animation-delay: 1.0s; }
+
+
+@keyframes fadeInWidget {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.footer-logo img {
+    /* Adjust if needed, height is set inline for now */
+    filter: contrast(0.1) brightness(0); /* Example: make placeholder dark if it's light */
+}
+
+.footer-description {
+    color: #6c757d; /* Softer color for description */
+    font-size: 0.875rem;
+}
+
+.widget-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #343a40; /* Darker title color */
+    margin-bottom: 1.2rem;
+}
+
+.footer-links li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+    color: #555; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #e74c3c; /* Theme color on hover */
+    padding-left: 5px; /* Slight indent on hover */
+}
+
+.footer-divider {
+    border-top: 1px solid #e0e0e0; /* Lighter divider */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.footer-tags {
+    font-size: 0.85rem;
+    color: #6c757d;
+    line-height: 1.8; /* Increased line height for readability */
+}
+.footer-tags strong {
+    color: #343a40;
+    margin-right: 5px;
+}
+.footer-tags span {
+    margin-right: 3px; /* Spacing before slash */
+    margin-left: 3px; /* Spacing after slash */
+}
+.footer-tags span:last-child {
+    margin-right: 0;
+}
+
+
+.footer-copyright p {
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+/* Responsive Adjustments for Footer */
+@media (max-width: 991.98px) { /* Medium devices (tablets) */
+    .footer-widget {
+        margin-bottom: 30px; /* Ensure spacing when columns stack */
+    }
+    .site-footer {
+        text-align: center; /* Center align content in widgets on medium and below */
+    }
+    .footer-logo {
+        display: inline-block; /* To center the logo image */
+    }
+    .footer-links {
+        padding-left: 0; /* Remove default ul padding */
+    }
+}
+
+@media (max-width: 767.98px) { /* Small devices (landscape phones) */
+    .footer-widget:not(:first-child) {
+        text-align: left; /* Revert to left align for link lists on small screens if preferred after centering on md */
+    }
+    /* If you want link lists to remain centered on small screens, remove the above rule */
+
+    .footer-tags {
+        text-align: left; /* Tags better left-aligned on mobile */
+    }
+}
+
+@media (max-width: 575.98px) {
+    .widget-title {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    .footer-links li {
+        margin-bottom: 0.5rem;
+    }
+    .site-footer {
+        font-size: 0.85rem;
+    }
+     .footer-widget {
+        /* Override the general text-align: center from md for better readability of list items */
+        text-align: left;
+    }
+    .footer-widget .footer-logo,
+    .footer-widget .footer-description {
+        text-align: center; /* Keep logo and description centered */
+         margin-left: auto;
+         margin-right: auto;
+    }
+}
+
+/* Style for scroll to top button if it needs adjustment with footer */
+/* #scrollToTopBtn is already styled, this is just a placeholder if needed */

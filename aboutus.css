@@ -1,0 +1,668 @@
+/* General body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #343a40; /* Bootstrap's default dark gray */
+}
+
+/* Navbar custom styles */
+.navbar-brand {
+    color: #222 !important; /* Darker color for brand */
+}
+.navbar .nav-link {
+    color: #555; /* Slightly lighter gray for nav links */
+    font-weight: 500;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+    color: #FF5151; /* Daxone red for active/hover links */
+}
+.navbar .nav-link i {
+    color: #555; /* Default icon color */
+}
+.navbar .nav-link:hover i {
+    color: #FF5151; /* Daxone red for icon hover */
+}
+
+/* Custom Daxone red color utility */
+.text-daxone-red {
+    color: #FF5151;
+}
+
+.btn-daxone-red {
+    background-color: #FF5151;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem; /* Vertical and horizontal padding */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-daxone-red:hover {
+    background-color: #e04141; /* Darker red on hover */
+    color: white;
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Welcome section specific styles */
+.welcome-section {
+    background-color: #fff; /* White background as in image */
+    overflow-x: hidden; /* Prevent horizontal scrollbar due to animations */
+}
+
+.hero-text-col h2 {
+    font-size: 2.5rem; /* Heading size */
+    color: #222; /* Dark text color */
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background-color: #FF5151; /* Red divider */
+}
+
+.hero-image-col img {
+    max-width: 100%;
+    height: auto;
+    /* border-radius: 8px; Optional: if you want rounded corners for the image */
+}
+
+/* Feature items styling */
+.feature-icon i {
+    color: #444; /* Icon color */
+}
+
+.feature-item h3 {
+    color: #333;
+    font-size: 1.15rem;
+}
+
+.feature-item p {
+    font-size: 0.9rem;
+}
+
+/* Animations - applied on load */
+.animate-on-load {
+    opacity: 0; /* Hidden before animation starts */
+    animation-fill-mode: forwards; /* Keep final state of animation */
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth easing */
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-80px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(80px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Applying animation classes */
+.animate-left {
+    animation-name: slideInLeft;
+    animation-duration: 0.8s;
+}
+
+.animate-right {
+    animation-name: slideInRight;
+    animation-duration: 0.8s;
+}
+
+.animate-fade-up {
+    animation-name: fadeInUp;
+    animation-duration: 0.7s;
+}
+
+
+/* Responsive Adjustments (Bootstrap handles most, but you can fine-tune) */
+@media (max-width: 991.98px) { /* Tablets and smaller desktops */
+    .hero-text-col h2 {
+        font-size: 2.2rem;
+    }
+    .navbar-nav {
+        text-align: center; /* Center nav items on mobile toggle */
+    }
+}
+
+@media (max-width: 767.98px) { /* Large mobiles and small tablets */
+    .hero-content {
+        text-align: center; /* Center text content on smaller screens */
+    }
+    .hero-image-col img {
+        max-width: 80%; /* Adjust image size for mobile */
+        margin: 0 auto 20px auto; /* Center image and add bottom margin */
+    }
+    .divider {
+        margin-left: auto;
+        margin-right: auto; /* Center divider */
+    }
+    .hero-text-col h2 {
+        font-size: 2rem;
+    }
+    .features-row .col-md-6 { /* Ensure 2 features per row, then stack to 1 */
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 575.98px) { /* Small mobiles */
+     .hero-image-col img {
+        max-width: 90%;
+    }
+    .hero-text-col h2 {
+        font-size: 1.8rem;
+    }
+    .btn-daxone-red {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.85rem;
+    }
+    .features-row .col-md-6 { /* Stack features to 1 per row on extra small screens */
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+     .feature-item h3 {
+        font-size: 1.1rem;
+    }
+}
+/* section2 */
+/* Product Banners Section Styling */
+.product-banner {
+    border-radius: 8px; /* Rounded corners for banners */
+    overflow: hidden; /* Ensures content stays within rounded corners */
+    background-color: #f8f9fa; /* Default light background */
+}
+
+.tv-banner {
+    min-height: 260px; /* Minimum height for the TV banner */
+    display: flex; /* Using flex to help position elements, though position absolute is used */
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tv-image-main {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    max-height: 85%; /* Adjust as needed */
+    max-width: 65%; /* Adjust as needed */
+    object-fit: contain;
+}
+
+.tv-banner-text-top {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    z-index: 1;
+}
+.tv-banner-text-top h3{
+    font-size: 1.75rem; /* Adjust font size */
+}
+.tv-banner-text-top p{
+    font-size: 0.9rem; /* Adjust font size */
+}
+
+
+.tv-banner-text-bottom {
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+    text-align: right;
+    z-index: 1;
+}
+
+/* Small Banners Styling */
+.small-banner {
+    min-height: 160px; /* Consistent height for smaller banners */
+}
+.small-banner .banner-text h4{
+    font-size: 1.4rem;
+}
+.small-banner .banner-text p{
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem !important;
+}
+.small-banner .banner-image img {
+    max-height: 100px; /* Control image size in small banners */
+    width: auto;
+}
+
+.headphone-banner {
+    background: linear-gradient(to right, #e0f5d1, #a8e0b3); /* Greenish gradient */
+}
+
+.band-banner {
+    background: linear-gradient(to right, #d1e9f5, #a8c5e0); /* Bluish gradient */
+}
+
+.btn-dark-outline {
+    border: 1px solid #333;
+    color: #333;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.btn-dark-outline:hover {
+    background-color: #333;
+    color: white;
+}
+
+
+/* Team Members Section Styling */
+.team-members-section {
+    /* background-color: #f8f9fa; If not using bg-light on section tag */
+}
+.title-divider {
+    width: 50px;
+    height: 3px;
+    background-color: #FF5151; /* Daxone red for divider */
+    margin-top: 10px;
+}
+
+.team-member-card {
+    /* background-color: #fff; Card background if section is colored */
+    /* border: 1px solid #eee; Optional border */
+    /* border-radius: 8px; Optional rounded corners for card */
+    /* padding: 15px; */
+}
+
+.team-member-image-wrapper {
+    background-color: #f0f0f0; /* Light gray background for image area */
+    padding: 0; /* Remove padding if image should fill */
+    display: inline-block; /* To wrap image tightly, or use block and text-center on parent */
+    /* border-radius: 8px; If you want the gray box to be rounded */
+    overflow: hidden; /* Ensures image doesn't break out of rounded corners if any */
+}
+.team-member-image-wrapper img {
+    display: block; /* Removes extra space below image */
+    max-width: 100%;
+    height: auto;
+}
+
+.team-member-card h5 {
+    font-size: 1.1rem;
+    color: #333;
+}
+.team-member-card p {
+    font-size: 0.85rem;
+}
+
+/* Scroll to Top Button (Example from your image) */
+#scrollToTopBtn {
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    display: none; /* Hidden by default, shown with JS */
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 1000;
+}
+
+
+/* Animation classes (if not already defined from previous section) */
+/* Ensure these keyframes and classes are in your style.css */
+/*
+.animate-on-load {
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-80px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(80px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-left {
+    animation-name: slideInLeft;
+    animation-duration: 0.8s;
+}
+
+.animate-right {
+    animation-name: slideInRight;
+    animation-duration: 0.8s;
+}
+
+.animate-fade-up {
+    animation-name: fadeInUp;
+    animation-duration: 0.7s;
+}
+*/
+
+/* Responsive adjustments for product banners */
+@media (max-width: 991.98px) { /* lg breakpoint */
+    .tv-image-main {
+        max-width: 55%;
+    }
+    .tv-banner-text-top h3{
+        font-size: 1.5rem;
+    }
+    .tv-banner-text-bottom .price{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 767.98px) { /* md breakpoint */
+    .tv-banner {
+        min-height: auto; /* Allow height to adjust */
+        padding-bottom: 100px; /* Space for bottom text if image is large */
+    }
+    .tv-image-main {
+        position: relative; /* Stack image normally on mobile */
+        display: block;
+        margin: 15px auto;
+        max-width: 70%;
+        max-height: 180px;
+        right: auto;
+        bottom: auto;
+    }
+    .tv-banner-text-top, .tv-banner-text-bottom {
+        position: relative; /* Stack text normally */
+        left: auto;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        text-align: center; /* Center text on mobile */
+        padding: 0 15px;
+    }
+    .tv-banner-text-bottom {
+        margin-top:10px;
+    }
+
+    .small-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .small-banner .banner-image {
+        margin-left: 0 !important;
+        margin-top: 15px;
+    }
+}
+/* Testimonials Section Styling */
+.testimonials-section {
+    background-color: #fff; /* Assuming a white background for the section */
+}
+
+.testimonials-section h2 {
+    color: #333; /* Dark color for the title */
+    /* font-weight: bold; Is handled by Bootstrap fw-bold */
+}
+
+/* .title-divider is likely already defined from previous sections.
+   If not, here it is again: */
+/*
+.title-divider {
+    width: 50px;
+    height: 3px;
+    background-color: #FF5151; /* Daxone red or your theme color
+    margin-top: 10px;
+}
+*/
+
+.testimonial-card {
+    background-color: #fff;
+    border: 1px solid #f0f0f0; /* Very light gray border as seen in the image */
+    /* padding: 1.5rem;  Is handled by Bootstrap p-4 class */
+    height: 100%; /* Ensures cards in the same row have equal height if content varies slightly */
+}
+
+.testimonial-quote {
+    font-size: 0.95rem; /* Adjust as needed */
+    line-height: 1.7;
+    /* color: #6c757d; Is handled by Bootstrap text-secondary */
+    /* font-style: italic; Is handled by Bootstrap fst-italic */
+}
+
+.testimonial-author-img {
+    width: 60px;  /* Fixed width for author image */
+    height: 60px; /* Fixed height for author image */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+.testimonial-author h6 {
+    font-size: 1rem;
+    color: #212529; /* Darker color for name */
+}
+
+.testimonial-author small {
+    font-size: 0.8rem;
+    /* color: #6c757d; Is handled by Bootstrap text-muted */
+}
+
+
+/* Animation classes (ensure these are defined in your style.css if not already) */
+/*
+.animate-on-load {
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-up {
+    animation-name: fadeInUp;
+    animation-duration: 0.7s;
+}
+*/
+
+/* Responsive adjustments for testimonial cards */
+@media (max-width: 991.98px) { /* lg breakpoint - for col-lg-5, they will stack below this */
+    /* No specific changes needed here if stacking is desired, handled by Bootstrap grid */
+}
+
+@media (max-width: 767.98px) { /* md breakpoint - for col-md-10 */
+    .testimonial-card {
+        margin-left: auto; /* Helps in centering if col-md-10 is used within a row */
+        margin-right: auto;
+    }
+}
+/* new section */
+/* Newsletter Signup Section Styling */
+.newsletter-section {
+    background-color: #e0f2f1; /* Light teal/mint background, similar to image */
+    /* If using a full background image:
+    background-image: url('path/to/your/desktop-image.jpg');
+    background-size: cover;
+    background-position: center;
+    */
+}
+
+.newsletter-deco {
+    position: absolute;
+    opacity: 0.5; /* Make them subtle */
+    z-index: 1; /* Behind the content */
+}
+.newsletter-deco-notebook {
+    left: 5%;
+    bottom: -20px; /* Adjust as needed */
+    width: 15%; /* Adjust size */
+    max-width: 200px;
+}
+.newsletter-deco-keyboard {
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20%; /* Adjust size */
+    max-width: 250px;
+}
+
+
+.newsletter-section h2 {
+    color: #263238; /* Darker, slightly desaturated color for text */
+}
+
+.newsletter-form .form-control {
+    border-color: #b0bec5; /* Light gray border for input */
+    border-right: none; /* Remove right border if button is attached */
+}
+.newsletter-form .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.15); /* Subtle focus shadow */
+    border-color: #80bdff;
+}
+
+.newsletter-form .btn-dark {
+    background-color: #37474f; /* Dark button, matching image's feel */
+    border-color: #37474f;
+}
+.newsletter-form .btn-dark:hover {
+    background-color: #263238;
+    border-color: #263238;
+}
+
+
+/* Footer Section Styling */
+.footer-section {
+    background-color: #f8f9fa; /* Light gray background for footer */
+    color: #555; /* Default text color for footer */
+    font-size: 0.9rem;
+}
+
+.footer-brand span {
+    color: #212529; /* Darker color for brand text */
+}
+
+.footer-text {
+    color: #6c757d; /* Bootstrap's text-muted color */
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.footer-heading {
+    color: #343a40; /* Darker color for column headings */
+    font-weight: 600; /* Semibold */
+    font-size: 1rem;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-links a:hover {
+    color: #FF5151; /* Daxone red or your primary theme color on hover */
+    text-decoration: none;
+}
+.footer-links a i {
+    width: 20px; /* Align icons nicely */
+}
+
+
+.footer-divider {
+    border-top: 1px solid #e0e0e0; /* Light divider line */
+}
+
+.footer-tags {
+    font-size: 0.8rem;
+    color: #777;
+    line-height: 1.8;
+}
+.footer-tags strong {
+    color: #444;
+}
+
+.footer-copyright p {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* Animation classes (ensure these are defined in your style.css if not already) */
+/*
+.animate-on-load {
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes slideInLeft { from { transform: translateX(-80px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes slideInRight { from { transform: translateX(80px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes fadeInUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.animate-left { animation-name: slideInLeft; animation-duration: 0.8s; }
+.animate-right { animation-name: slideInRight; animation-duration: 0.8s; }
+.animate-fade-up { animation-name: fadeInUp; animation-duration: 0.7s; }
+*/
+
+/* Responsive adjustments for newsletter decorative elements */
+@media (max-width: 1199.98px) { /* xl breakpoint */
+    .newsletter-deco-notebook {
+        left: 2%;
+        width: 12%;
+    }
+    .newsletter-deco-keyboard {
+        right: 2%;
+        width: 18%;
+    }
+}
+/* LG breakpoint already hides them via d-none d-lg-block */
+
+
+@media (max-width: 767.98px) { /* md breakpoint for footer adjustments */
+    .footer-section {
+        text-align: center; /* Center text in footer columns on mobile */
+    }
+    .footer-brand {
+        display: block; /* Make brand block to center it via text-align */
+        margin-bottom: 1.5rem !important;
+    }
+    .footer-heading {
+        margin-top: 1rem; /* Add some space above headings if they follow content */
+    }
+    .footer-links a i {
+        display: none; /* Optionally hide icons on mobile if space is tight, or adjust alignment */
+    }
+     .footer-tags {
+        text-align: left; /* Keep tags aligned left even if parent is centered */
+    }
+}

@@ -1,0 +1,269 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* Optional: light background for the page */
+}
+
+/* Navbar Customization */
+.navbar-brand img {
+    height: 24px; /* Adjust as needed */
+}
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: 500;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: #DC3545; /* Your theme's red color */
+}
+.navbar-nav .nav-link i {
+    font-size: 1.1rem;
+}
+.navbar .text-danger {
+    color: #DC3545 !important; /* Ensure red color */
+}
+
+
+/* Card Customization */
+.custom-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden; /* Ensures image zoom doesn't go outside card bounds */
+    background-color: #fff; /* Ensure cards are white */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Softer shadow */
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.custom-card .card-img-top {
+    height: 250px; /* Or adjust as needed, or use aspect-ratio */
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.custom-card:hover .card-img-top {
+    transform: scale(1.05); /* Slight zoom on image hover */
+}
+
+.custom-card .card-title {
+    color: #212529; /* Darker title */
+    margin-bottom: 0.75rem;
+}
+
+.custom-card .card-text {
+    font-size: 0.875rem; /* Slightly smaller paragraph text */
+    line-height: 1.6;
+}
+
+.custom-card .card-footer {
+    padding-bottom: 1rem; /* Add some padding at the bottom of the card */
+}
+
+.short-red-line {
+    border: none;
+    height: 2px;
+    background-color: #DC3545; /* Your theme's red color */
+    width: 30px; /* Short line */
+    margin-top: 0; /* Remove default top margin of hr */
+    margin-bottom: 0.75rem;
+    opacity: 1;
+}
+
+.blog-section {
+    background-color: #fff; /* As per image, the blog section background is white */
+}
+/* section2 */
+/* Card Customization */
+.custom-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden; /* Ensures image zoom doesn't go outside card bounds */
+    background-color: #fff; /* Ensure cards are white */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Softer shadow */
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.custom-card .card-img-top {
+    height: 250px; /* Or adjust as needed, or use aspect-ratio */
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.custom-card:hover .card-img-top {
+    transform: scale(1.05); /* Slight zoom on image hover */
+}
+
+.custom-card .card-title {
+    color: #212529; /* Darker title */
+    margin-bottom: 0.75rem;
+}
+
+.custom-card .card-text {
+    font-size: 0.875rem; /* Slightly smaller paragraph text */
+    line-height: 1.6;
+}
+
+.custom-card .card-footer {
+    padding-bottom: 1rem; /* Add some padding at the bottom of the card */
+}
+
+.short-red-line {
+    border: none;
+    height: 2px;
+    background-color: #DC3545; /* Your theme's red color */
+    width: 30px; /* Short line */
+    margin-top: 0; /* Remove default top margin of hr */
+    margin-bottom: 0.75rem;
+    opacity: 1;
+}
+
+.blog-section {
+    background-color: #fff; /* As per image, the blog section background is white */
+}
+/* section3 */
+/* Card Customization */
+.custom-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden; /* Ensures image zoom doesn't go outside card bounds */
+    background-color: #fff; /* Ensure cards are white */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Softer shadow */
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.custom-card .card-img-top {
+    height: 250px; /* Or adjust as needed, or use aspect-ratio */
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.custom-card:hover .card-img-top {
+    transform: scale(1.05); /* Slight zoom on image hover */
+}
+
+.custom-card .card-title {
+    color: #212529; /* Darker title */
+    margin-bottom: 0.75rem;
+}
+
+.custom-card .card-text {
+    font-size: 0.875rem; /* Slightly smaller paragraph text */
+    line-height: 1.6;
+}
+
+.custom-card .card-footer {
+    padding-bottom: 1rem; /* Add some padding at the bottom of the card */
+}
+
+.short-red-line {
+    border: none;
+    height: 2px;
+    background-color: #DC3545; /* Your theme's red color */
+    width: 30px; /* Short line */
+    margin-top: 0; /* Remove default top margin of hr */
+    margin-bottom: 0.75rem;
+    opacity: 1;
+}
+
+.blog-section {
+    background-color: #fff; /* As per image, the blog section background is white */
+}
+/* FOOTER SECTION */
+/* Footer Section Styling */
+.footer-section {
+    background-color: #f8f9fa; /* Light gray background, similar to Bootstrap's .bg-light */
+    font-size: 0.9rem;
+    color: #555; /* Default text color for footer */
+}
+
+.footer-logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #212529; /* Darker color for the logo text */
+}
+.footer-logo img {
+    height: 24px; /* Adjust as needed */
+}
+
+.footer-section h6 {
+    font-size: 0.9rem; /* Slightly smaller for a denser look */
+    color: #212529; /* Darker heading color */
+    margin-bottom: 1rem; /* Ensure consistent spacing */
+}
+
+.footer-links li a {
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    font-size: 0.875rem; /* Slightly smaller link text */
+}
+.footer-links li a.text-muted:hover {
+    color: #DC3545 !important; /* Theme red color on hover */
+}
+
+.tags-section {
+    line-height: 1.9; /* Increased line-height for better readability of wrapped tags */
+    font-size: 0.85rem;
+    color: #6c757d; /* Muted color for slashes and default tag text */
+}
+.tags-section strong {
+    color: #343a40; /* Darker for the "TAGS" label */
+}
+.tags-section .tag-link {
+    color: #555; /* Slightly darker than muted for tags */
+    text-decoration: none;
+    margin-right: 2px; /* Adjust spacing around slashes */
+    margin-left: 2px;
+    white-space: nowrap; /* Prevents tags from breaking mid-word, but allows overall line wrap */
+}
+.tags-section .tag-link:hover {
+    color: #DC3545;
+    text-decoration: none; /* Or underline if you prefer */
+}
+
+.footer-section hr {
+    border-top: 1px solid #e0e0e0; /* Lighter horizontal rule */
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #DC3545; /* Theme red */
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex; /* For centering icon */
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 1030; /* Ensure it's above other content */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    opacity: 0; /* Start hidden */
+    visibility: hidden;
+    transform: translateY(20px); /* Start slightly offset for entry animation */
+}
+
+.scroll-top-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+    color: white;
+    transform: translateY(18px) scale(1.05); /* Slight lift on hover */
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
